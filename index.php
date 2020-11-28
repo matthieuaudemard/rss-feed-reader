@@ -4,6 +4,6 @@ $feed_address = 'https://www.clubic.com/feed/news.rss';
 
 $content = file_get_contents($feed_address);
 
-header('Content-Type: application/xml');
+$xml = simplexml_load_string($content, null, LIBXML_NOCDATA);
 
-echo $content;
+var_dump($xml);
